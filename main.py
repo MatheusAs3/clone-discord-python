@@ -5,6 +5,16 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
 
+
+# Componentes
+from components.server_name import c_serverName
+from components.server_list import c_serverList
+from components.channel_info import c_channelInfo
+
+
+
+
+
 # SL - Server List
 # SN - Server Name
 # CI - Channel Info
@@ -22,115 +32,8 @@ material_icons = 'https://fonts.googleapis.com/icon?family=Material+Icons'
 app = dash.Dash(__name__, external_stylesheets=[roboto,material_icons,dbc.themes.CYBORG])
 
 
-class ServerButton():
-  def __init__(self,selectd,isHome,hasNotifications,mentions):
-    self.selectd = selectd
-    self.isHome = isHome
-    self.hasNotifications = hasNotifications
-    self.mentions = mentions
-
-  
-  def get(self):
-
-    extra_class = ""
-
-    if self.hasNotifications:
-      extra_class += " not"
-
-    if self.isHome:
-      serverButton = html.Button(html.Img(src="https://svgshare.com/i/Pb9.svg", alt="Discord", className="sl-img"), className=f"sl-bt-home{extra_class}")
-
-      if self.mentions > 0:
-        extra_class += " men"
-        serverButton = html.Button(html.Img(src="https://svgshare.com/i/Pb9.svg", alt="Discord", className="sl-img"), className=f"sl-bt-home{extra_class}", value=str(self.mentions))
-
-    else:
-      serverButton = html.Button(className=f"sl-bt{extra_class}")   
-
-      if self.mentions > 0:
-        extra_class += " men"
-        serverButton = html.Button(className=f"sl-bt{extra_class}", value=str(self.mentions))  
 
 
-
-    return serverButton
-
-
-
-
-
-
-
-def c_ServerList():
-  st_container = "sl-ctn"
-  st_separator = "sl-sp"
-
-
-  content = html.Div([
-
-    ServerButton(False,True,False,0).get(),
-    html.Div(className=st_separator),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,True,0).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,4).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,73).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,False,0).get(),
-    ServerButton(False,False,True,333).get(),
-
-  ], className=st_container)
-
-
-  return content
-
-
-
-def c_ServerName():
-
-  st_container = "sn-ctn"
-  st_title = "sn-title"
-  st_icon = "sn-icon"
-
-
-  content = html.Div([
-
-    html.H1("Servidor de Teste", className=st_title),
-    html.Span("expand_more", className=f"material-icons {st_icon}")
-
-
-  ], className=st_container)
-
-
-  return content
-
-
-
-
-def c_ChannelInfo():
-  st_container = "ci-ctn"
-  st_icon = "ci-icon"
-  st_title = "ci-title"
-  st_separator = "ci-sp"
-  st_discription = "ci-dp"
-
-
-  content = html.Div([
-
-    html.Img(src="/assets/icons/hashtag.svg", className=st_icon),
-    html.H1("chat-livre", className=st_title),
-    html.Div(className=st_separator),
-    html.Span("Canal aberto para conversas", className=st_discription)
-
-
-  ], className=st_container)
-
-
-  return content
 
 
 
@@ -432,9 +335,9 @@ def c_mention(name):
 
 app.layout = html.Div([
 
-  c_ServerList(),
-  c_ServerName(),
-  c_ChannelInfo(),
+  c_serverList(),
+  c_serverName(),
+  c_channelInfo(),
   c_ChannelList(),
   c_UserInfo(),
   c_ChannelData(),
