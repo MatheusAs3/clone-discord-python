@@ -4,8 +4,6 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
-
-
 # Componentes
 from components.server_name import c_serverName
 from components.server_list import c_serverList

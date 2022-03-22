@@ -14,21 +14,43 @@
   display: flex;
   flex-direction: column;
 
-  max-height: calc(100vh - 45px - 75px);
+  max-height: calc(100vh - 46px - 75px);
   overflow-y: scroll;
 }
 
 
 .cd-msg::-webkit-scrollbar{
-  width: 8px;
+  height: 16px;
+  width: 16px;
 }
-.cd-msg::-webkit-scrollbar-thumb{
- background-color: var(--tertiary);
- border-radius: 4px;
+
+.cd-msg::-webkit-scrollbar-corner{
+ background-color:transparent;
 }
-.cd-msg::-webkit-scrollbar-track{
+
+.cd-msg::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary);
+  min-height: 40px;
+}
+
+.cd-msg::-webkit-scrollbar-track {
+  margin-bottom: 8px;
   background-color: var(--secondary);
 }
+
+
+.cd-msg::-webkit-scrollbar-thumb,
+.cd-msg::-webkit-scrollbar-track{
+border: 4px solid transparent;
+ background-clip: padding-box;
+ border-radius: 8px;
+ 
+}
+
+
+
+  
+
 
 
 

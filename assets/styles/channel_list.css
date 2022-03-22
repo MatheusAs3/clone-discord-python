@@ -6,8 +6,19 @@
 
   padding: 24px 9.5px 0 16px;
   background-color: var(--secondary);
+  overflow-y: scroll;
 }
 
+.cl-ctn::-webkit-scrollbar{
+  width: 4px;
+}
+.cl-ctn::-webkit-scrollbar-thumb{
+ background-color: var(--tertiary);
+ border-radius: 4px;
+}
+.cl-ctn::-webkit-scrollbar-track{
+  background-color: var(--secondary);
+}
 
 
 .cl-ct{
