@@ -41,15 +41,7 @@ app = dash.Dash(__name__, external_stylesheets=[roboto,material_icons,dbc.themes
 
 
 
-
-
-
-
-
-
-
-
-app.layout = html.Div([
+layour_server = html.Div([
 
   c_serverList(),
   c_serverName(),
@@ -68,15 +60,7 @@ app.layout = html.Div([
 
 
 
-
-
-
-
-
-
-
-
-
+app.layout = layour_server
 
 
 
