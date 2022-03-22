@@ -1,0 +1,89 @@
+.cb-ctn{
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  padding: 5px 3px;
+  border-radius: 5px;
+
+  background-color: transparent;
+
+  transition: background-color .2s;
+
+}
+
+
+.cb-ctn>div{
+  display: flex;
+  align-items: center;
+}
+
+.cb-ctn>div>span {
+  font-size: 15px;
+  margin-left:5px;
+  color: var(--senary);
+}
+
+
+.cb-ctn:hover, .cb-ctn:active {
+  background-color: var(--quinary);
+}
+
+
+.cb-ctn:hover>div>.cb-cn, .cb-ctn:active>div>span.cb-cn {
+  color: var(--white);
+}
+
+.cb-ctn .settings{
+  display: none;
+}
+
+.cb-ctn:hover> .settings {
+  display: flex;
+  align-items: center;
+}
+
+
+.cb-icon-hashtag  {
+  width: 20px;
+  height: 20px;
+
+  filter: invert(54%) sepia(2%) saturate(564%) hue-rotate(169deg) brightness(85%) contrast(86%);
+
+  
+}
+
+
+.cb-icon-add {
+  width: 16px;
+  height: 16px;
+
+  color: var(--symbol);
+  cursor: pointer;
+
+  transition: color .2s;
+
+}
+
+.cb-icon-add:hover {
+  color: var(--white);
+}
+
+
+.cb-icon-settings {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  color: var(--symbol);
+  cursor: pointer;
+
+  transition: color .2s;
+
+}
+
+.cb-icon-settings:hover {
+  color: var(--white);
+}
