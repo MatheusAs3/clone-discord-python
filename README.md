@@ -1,5 +1,5 @@
 # Discord Clone com Python
- Clone do discord usando Python com a biblioteca Flask
+ Clone do discord usando Python e Flask
 
 
 
