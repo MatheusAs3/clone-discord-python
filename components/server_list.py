@@ -2,6 +2,7 @@ import dash
 from dash import dcc, html
 
 
+#Melhorar isso, pqp
 class ServerButton():
   def __init__(self,selectd,isHome,hasNotifications,mentions):
     self.selectd = selectd
@@ -18,11 +19,11 @@ class ServerButton():
       extra_class += " not"
 
     if self.isHome:
-      serverButton = html.Button(html.Img(src="https://svgshare.com/i/Pb9.svg", alt="Discord", className="sl-img"), className=f"sl-bt-home{extra_class}")
+      serverButton = html.Button(html.Img(src="/assets/icons/discord.svg", alt="Discord", className="sl-icon"), className=f"sl-bt-home{extra_class}")
 
       if self.mentions > 0:
         extra_class += " men"
-        serverButton = html.Button(html.Img(src="https://svgshare.com/i/Pb9.svg", alt="Discord", className="sl-img"), className=f"sl-bt-home{extra_class}", value=str(self.mentions))
+        serverButton = html.Button(html.Img(src="/assets/icons/discord.svg", alt="Discord", className="sl-icon"), className=f"sl-bt-home{extra_class}", value=str(self.mentions))
 
     else:
       serverButton = html.Button(className=f"sl-bt{extra_class}")   
