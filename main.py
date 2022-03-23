@@ -14,8 +14,8 @@ from components.channel_info import c_channelInfo
 from components.channel_list import c_channelList
 from components.user_info import c_userInfo
 from components.user_list import c_userList
-from components.channel_data import c_channelData
 
+from components.channel_data import c_channelData
 from components.channel_data import c_channelMessage
 
 
@@ -38,11 +38,6 @@ app = dash.Dash(__name__, external_stylesheets=[roboto,material_icons,dbc.themes
 
 
 
-
-
-
-
-
 layour_server = html.Div([
 
   c_serverList(),
@@ -55,10 +50,6 @@ layour_server = html.Div([
 
 
 ], className="grid-container")
-
-
-
-
 
 
 
