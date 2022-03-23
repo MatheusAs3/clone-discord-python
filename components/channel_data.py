@@ -46,10 +46,10 @@ def c_channelData():
 
 
 
-    ], className=st_messages),
+    ], className=st_messages, id="Data1"),
 
     html.Div([
-      dcc.Input(type="text",className=st_input,placeholder="Conversar #chat-livre"),
+      dcc.Input(type="text",className=st_input,placeholder="Conversar #chat-livre", id="Chat1", autoComplete="off"),
       html.Span("alternate_email", className=f"material-icons {st_icon_email}")
     ], className=st_input_wrapper)
 
